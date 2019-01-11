@@ -1,0 +1,184 @@
+//IMPORT
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Righteous');
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+
+//MIXIN
+
+//LETRAS
+@mixin fontBody  ($property){
+    font-family: 'Maven Pro', sans-serif;
+    font-size: $property;
+    color: $property;
+    text-align: center;
+}
+@mixin fontTitle ($property) {
+    font-family: 'Righteous', cursive;
+    font-size: $property;
+    color: $property;
+    text-align: center;
+}
+
+//SOMBRAS
+@mixin shadow {
+    -webkit-box-shadow: 7px 6px 14px 0px rgba(230,212,230,0.7);
+    -moz-box-shadow: 7px 6px 14px 0px rgba(230,212,230,0.7);
+    box-shadow: 7px 6px 14px 0px rgba(230,212,230,0.7);
+}
+
+//BOTONES
+@mixin btn-search {
+    position:relative;
+    width:203px;
+    height:43px;
+    background:#022c3e;
+    -webkit-border-radius:38px;
+    -moz-border-radius:38px;
+    border-radius:38px;
+    -webkit-box-shadow:inset 0 1px 2px #000, 0px 1px 1px rgba(255,255,225,0.2);
+    -moz-box-shadow:inset 0 1px 2px #000, 0px 1px 1px rgba(255,255,225,0.2);
+    box-shadow:inset 0 1px 2px #000, 0px 1px 0px rgba(255,255,225,0.3);
+    
+}
+
+//INPUTS
+@mixin input-search {
+    @include fontBody(15px);
+    color: #000;
+    position:relative;
+    width:203px;
+    height:35px;
+    border-radius:30px;
+    -webkit-box-shadow:inset 0 1px 2px #000, 0px 1px 1px rgba(255,255,225,0.2);
+    -moz-box-shadow:inset 0 1px 2px #000, 0px 1px 1px rgba(255,255,225,0.2);
+    box-shadow:inset 0 1px 2px #000, 0px 1px 0px rgba(255,255,225,0.3);-webkit-transition: .5s all;
+	
+
+}
+
+//BODY
+body{
+    background: rgba(73, 156, 234, 0.363);
+    background: -moz-linear-gradient(45deg, rgba(73,155,234,1) 0%, rgba(36,127,230,1) 45%, rgba(32,124,229,1) 50%);
+}
+
+//ESTILOS GENERALES
+h1{
+    @include fontTitle(40px);
+    @include fontTitle(rgba(30, 32, 29, 0.829));
+}
+
+//contenedor principal
+.big-box{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto; 
+}
+
+//contenedor de secciones
+.box-modules{
+    width: 25%;
+    height: 200px;
+    background: rgba(29, 34, 102, 0.507);
+    @include shadow;
+    @include fontBody(30px); 
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    i{
+    font-size: 100px;
+    color: white;
+    }
+}
+
+//SECCION DE CONSULTA
+
+.search{
+    width: 40%;
+    height: 100px;
+    @include fontBody(20px);
+    @include fontBody(#000);
+    input{
+        @include input-search();
+    }
+    .btn-search{
+        @include btn-search();
+        @include fontBody(15px);
+        @include fontBody(#ffffff);
+    }
+}
+
+.volver{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    @include fontBody(20px);
+    @include fontBody(#000);
+        .btn-search{
+            @include btn-search();
+            @include fontBody(15px);
+            @include fontBody(#ffffff);
+        }
+    }
+    
+//formularios
+.form{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 50%;
+    height: auto;
+    background: rgba(29, 34, 102, 0.507);
+    @include fontBody(15px);
+    @include fontBody(#ffffff);
+    div{
+        margin: 5px;
+    }
+    input{
+        @include fontBody(15px);
+        @include fontBody(#000);
+        height: 30px;
+        border-radius: 10px;
+        border: #022c3e solid 1px; 
+    }
+}
+
+.btn{
+    @include btn-search();
+    @include fontBody(15px);
+    @include fontBody(#ffffff);
+    i{
+        font-size: 15px;
+    }
+}
+
+//Caja de Tabla
+.box-table{
+    position: relative;
+    top: 50px;
+    bottom: 20px;
+    padding: 20px;
+    width: 70%;
+    height: 300px;
+    background: rgba(241, 239, 243, 0.767);
+    @include shadow;
+    @include fontBody(30px);
+    border-collapse: collapse;
+    margin: auto;
+        tr td{
+            width: 200px;
+            border: 1px solid #022c3e;
+        }
+       
+}
+
+.error{
+color: rgb(0, 255, 34);
+
+}
+
+.hide{
+    display: none;
+}
